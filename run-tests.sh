@@ -20,6 +20,7 @@ nginx -c $DIR/nginx.conf
 # tests
 test "http server" "$(curl -v http://localhost:8080 2>&1)"
 test "https server" "$(curl -v --cacert $DIR/ssl/nginx.crt https://localhost:8081 2>&1)"
+test "https to http" "$(curl -v --cacert $DIR/ssl/nginx.crt https://localhost:8082 2>&1)"
 
 # stop nginx
 nginx -s stop
