@@ -28,6 +28,9 @@ test "lua block" "$(curl -v http://localhost:8085 2>&1)" "Hello World"
 test "lua auth unauthorized" "$(curl -v http://localhost:8086 2>&1)" "401 Unauthorized"
 test "lua auth forbidden"    "$(curl -v -H 'USERNAME: shuaicj' http://localhost:8086 2>&1)" "403 Forbidden"
 test "lua auth ok"           "$(curl -v -H 'USERNAME: admin' http://localhost:8086 2>&1)" "200 OK"
+test "auth request unauthorized" "$(curl -v http://localhost:8087 2>&1)" "401 Unauthorized"
+test "auth request forbidden"    "$(curl -v -H 'USERNAME: shuaicj' http://localhost:8087 2>&1)" "403 Forbidden"
+test "auth request ok"           "$(curl -v -H 'USERNAME: admin' http://localhost:8087 2>&1)" "200 OK"
 
 # stop nginx
 nginx -s stop
