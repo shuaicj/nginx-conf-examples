@@ -23,6 +23,11 @@ test "https server" "$(curl -v --cacert $DIR/ssl/nginx.crt https://localhost:808
 test "https to http" "$(curl -v --cacert $DIR/ssl/nginx.crt https://localhost:8082 2>&1)" "200 OK"
 test "allow" "$(curl -v http://127.0.0.1:8083 2>&1)" "200 OK"
 test "deny"  "$(curl -v http://localhost:8083 2>&1)" "403 Forbidden"
+test "lua echo" "$(curl -v http://localhost:8084 2>&1)" "Hello World"
+test "lua block" "$(curl -v http://localhost:8085 2>&1)" "Hello World"
+test "lua auth unauthorized" "$(curl -v http://localhost:8086 2>&1)" "401 Unauthorized"
+test "lua auth forbidden"    "$(curl -v -H 'USERNAME: shuaicj' http://localhost:8086 2>&1)" "403 Forbidden"
+test "lua auth ok"           "$(curl -v -H 'USERNAME: admin' http://localhost:8086 2>&1)" "200 OK"
 
 # stop nginx
 nginx -s stop
