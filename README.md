@@ -12,7 +12,11 @@ Nginx configuration examples.
 
 #### Get Started
 1. Install Nginx with lua support.
-> `$ brew tap homebrew/nginx`
-> `$ brew install nginx-full --with-lua-module --with-echo-module --with-set-misc-module`
+```
+$ brew tap homebrew/nginx
+$ brew install nginx-full --with-lua-module --with-echo-module --with-set-misc-module
+```
 2. Run all tests.
-> `$ ./run-tests.sh`
+```
+$ ./run-tests.sh
+```
