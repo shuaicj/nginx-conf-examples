@@ -28,4 +28,4 @@ $ ./start-nginx.sh
 ```
 Access `http://localhost:8080/cors/` in browser.
 If you can see `Hello World`, everything is going fine.
-See `support/cors` for details.
+See the config file `support/cors` for details.
