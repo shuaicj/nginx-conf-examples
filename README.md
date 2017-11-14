@@ -10,7 +10,7 @@ Nginx configuration examples.
 - **8085-lua-block.conf** - lua code block
 - **8086-lua-auth.conf** - simple auth by verifying request header
 - **8087-auth-request.conf** - auth by subrequest
-- **8088-cors-api.conf** - CORS allowed
+- **8088-cors-api.conf** - allow CORS
 
 #### Get Started
 1. Install Nginx with lua support.
@@ -27,4 +27,5 @@ $ ./run-tests.sh
 $ ./start-nginx.sh
 ```
 Access `http://localhost:8080/cors/` in browser.
-If you can see `Hello World`, everything is going ok.
+If you can see `Hello World`, everything is going fine.
+See `support/cors` for details.
