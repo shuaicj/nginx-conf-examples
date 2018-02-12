@@ -15,7 +15,7 @@ Nginx configuration examples.
 #### Get Started
 1. Install Nginx with lua support.
 ```
-$ brew tap homebrew/nginx
+$ brew tap denji/nginx
 $ brew install nginx-full --with-lua-module --with-echo-module --with-set-misc-module --with-auth-req
 ```
 2. Run all tests.
